@@ -2,20 +2,19 @@ import Calculator
 
 import pytest
 
-@pytest.mark.parametrize("a,b",[(3,2),(5,1),(8,2)])
-def test_Add(a,b):
+@pytest.mark.parametrize("a,b,c",[(3,2,5),(5,1,6),(8,2,10)])
+def test_Add(a,b,c):
     result= Calculator.Add(a,b)
-    assert result == a+b
-@pytest.mark.parametrize("a,b",[(3,8),(5,4),(8,6)])
-def test_Sub(a,b):
-
+    assert result == c
+@pytest.mark.parametrize("a,b,c",[(8,3,5),(5,4,1),(8,6,2)])
+def test_Sub(a,b,c):
     result= Calculator.Sub(a,b)
-    assert result == a-b
-@pytest.mark.parametrize("a,b",[(3,5),(5,7),(8,7)])
-def test_Mul(a,b):
+    assert result == c
+@pytest.mark.parametrize("a,b,c",[(3,5,10),(5,7,35),(8,8,49)])
+def test_Mul(a,b,c):
     result= Calculator.Mul(a,b)
-    assert result == a*b
-@pytest.mark.parametrize("a,b",[(3,4),(5,9),(8,3)])
-def test_Div(a,b):
+    assert result == c
+@pytest.mark.parametrize("a,b,c",[(4,2,2),(30,10,3),(25,5,5)])
+def test_Div(a,b,c):
     result= Calculator.Div(a,b)
-    assert result == a/b
+    assert result == c
